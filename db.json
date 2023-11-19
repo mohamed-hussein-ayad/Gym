@@ -5,14 +5,17 @@
       "lastName": "ayad",
       "email": "mohamedaiaad91@gmail.com",
       "mobile": "01091263068",
-      "weight": "",
-      "height": "",
-      "gender": "",
-      "requireTrainer": "",
-      "package": "",
-      "important": "",
-      "haveGymBefore": "",
-      "enquiryDate": "",
+      "weight": 323,
+      "height": 323,
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Toxic fat reduction",
+        "Building lean Muscle"
+      ],
+      "haveGymBefore": "Yes",
+      "enquiryDate": "2023-11-22T22:00:00.000Z",
       "id": 1
     }
   ]
