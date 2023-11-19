@@ -5,7 +5,46 @@
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content> </mat-card-content>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div matLine>
+          Mobile Number :
+          <button mat-button>444444444</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Gender :
+          <button mat-button>444444444</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Package :
+          <button mat-button>444444444</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Trainer Require :
+          <button mat-button>444444444</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Goals :
+          <button mat-button>
+            <mat-chip-listbox aria-label="Fish selection">
+              <ng-container *ngFor="let row of ['']">
+                <mat-chip-option selected>{{ row }}</mat-chip-option>
+              </ng-container>
+            </mat-chip-listbox>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
   <mat-card-actions>
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>
