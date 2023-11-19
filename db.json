@@ -1,42 +1,19 @@
 {
   "enquiry": [
     {
-      "firstName": "dfdsf",
-      "lastName": "dfdfdf",
-      "email": "dfdfdf",
-      "mobile": "dfdfdfd",
-      "weight": 23232,
-      "height": 323232,
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
-      "important": [
-        "Energy and Endurance",
-        "Building lean Muscle",
-        "Healthier Digestive system"
-      ],
-      "haveGymBefore": "Yes",
-      "enquiryDate": "2023-11-20T22:00:00.000Z",
-      "id": 1
-    },
-    {
       "firstName": "mohamed",
       "lastName": "ayad",
       "email": "mohamedaiaad91@gmail.com",
-      "mobile": "7895739485",
-      "weight": 54353,
-      "height": 5353,
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Monthly",
-      "important": [
-        "Toxic fat reduction",
-        "Building lean Muscle",
-        "Healthier Digestive system"
-      ],
-      "haveGymBefore": "No",
-      "enquiryDate": "2023-11-13T22:00:00.000Z",
-      "id": 2
+      "mobile": "01091263068",
+      "weight": "",
+      "height": "",
+      "gender": "",
+      "requireTrainer": "",
+      "package": "",
+      "important": "",
+      "haveGymBefore": "",
+      "enquiryDate": "",
+      "id": 1
     }
   ]
 }

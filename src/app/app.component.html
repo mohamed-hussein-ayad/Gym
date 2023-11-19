@@ -1,11 +1,14 @@
 <mat-toolbar color="primary">
   <h1>Gym Registration App</h1>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="accent">View Enquiries</button>
+  <button routerLink="/list" mat-raised-button color="accent">
+    View Enquiries
+  </button>
 </mat-toolbar>
 
 <div class="container mt-4">
   <router-outlet></router-outlet>
 </div>
 
+<ng-toast></ng-toast>
 <ng-confirm></ng-confirm>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { Message, NgToastService } from 'ng-angular-popup';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-create-registration',
@@ -20,10 +22,14 @@ export class CreateRegistrationComponent implements OnInit {
     'Fitness',
   ];
   public regesterForm!: FormGroup;
+  public userIdToUpdate!: number;
+  public isUpdateActive: boolean = false;
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
-    private tosterService: NgToastService
+    private tosterService: NgToastService,
+    private ActivatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.regesterForm = this.fb.group({
@@ -40,6 +46,13 @@ export class CreateRegistrationComponent implements OnInit {
       haveGymBefore: [''],
       enquiryDate: [''],
     });
+    this.ActivatedRoute.params.subscribe((val) => {
+      this.userIdToUpdate = val['id'];
+      this.api.getRegestrationUserId(this.userIdToUpdate).subscribe((res) => {
+        this.isUpdateActive = true;
+        this.fillFormToUpdate(res);
+      });
+    });
   }
   submit() {
     this.api.postRegestration(this.regesterForm.value).subscribe((res) => {
@@ -49,6 +62,35 @@ export class CreateRegistrationComponent implements OnInit {
         duration: 3000,
       });
       this.regesterForm.reset();
+    });
+  }
+  update() {
+    this.api
+      .updateRegestration(this.regesterForm.value, this.userIdToUpdate)
+      .subscribe((res) => {
+        this.tosterService.success({
+          detail: 'Success',
+          summary: 'Enquiry Updated',
+          duration: 3000,
+        });
+        this.regesterForm.reset();
+        this.router.navigate(['list']);
+      });
+  }
+  fillFormToUpdate(user: User) {
+    this.regesterForm.setValue({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      mobile: user.mobile,
+      height: user.height,
+      weight: user.weight,
+      gender: user.gender,
+      enquiryDate: user.enquiryDate,
+      package: user.package,
+      important: user.important,
+      haveGymBefore: user.haveGymBefore,
+      requireTrainer: user.requireTrainer,
     });
   }
 }
